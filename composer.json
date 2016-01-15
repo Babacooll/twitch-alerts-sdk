@@ -1,0 +1,19 @@
+{
+    "name": "michaelgarrez/twitch-alerts-api",
+    "description": "Twitch Alerts API Wrapper",
+    "autoload": {
+        "psr-4": {
+            "TwitchAlerts\\": "src/"
+        }
+    },    
+    "require": {
+        "guzzlehttp/guzzle": "^6.1"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Michaël Garrez",
+            "email": "michael.garrez@gmail.com"
+        }
+    ]
+}
