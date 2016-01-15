@@ -15,27 +15,27 @@ class Client
     /**
      * Twitch alerts API base URI
      */
-    const BASE_URI = 'https://www.twitchalerts.com/api/v1.0';
+    const BASE_URI = 'https://www.twitchalerts.com';
 
     /**
      *  Twitch alerts Authorize endpoint path
      */
-    const AUTHORIZE_ENDPOINT = '/authorize';
+    const AUTHORIZE_ENDPOINT = '/api/v1.0/authorize';
 
     /**
      *  Twitch alerts Token endpoint path
      */
-    const TOKEN_ENDPOINT = '/token';
+    const TOKEN_ENDPOINT = '/api/v1.0/token';
 
     /**
      *  Twitch alerts Donations endpoint path
      */
-    const DONATION_ENDPOINT = '/donations';
+    const DONATION_ENDPOINT = '/api/v1.0/donations';
 
     /**
      *  Twitch alerts Alert endpoint path
      */
-    const ALERT_ENDPOINT = '/alerts';
+    const ALERT_ENDPOINT = '/api/v1.0/alerts';
 
     /**
      * Twitch alerts API scopes
@@ -117,6 +117,8 @@ class Client
                     'code'          => $code
                 ]
             ]);
+
+            var_dump((string) $response->getBody());
 
             return json_decode((string) $response->getBody(), true);
         } catch (\Exception $e) {
