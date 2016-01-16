@@ -118,8 +118,6 @@ class Client
                 ]
             ]);
 
-            var_dump((string) $response->getBody());
-
             return json_decode((string) $response->getBody(), true);
         } catch (\Exception $e) {
             // TODO : Throw exception
