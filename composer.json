@@ -1,11 +1,14 @@
 {
-    "name": "michaelgarrez/twitch-alerts-api",
-    "description": "Twitch Alerts API Wrapper",
+    "name": "michaelgarrez/twitch-alerts-sdk",
+    "description": "Twitch Alerts SDK",
     "autoload": {
         "psr-4": {
             "TwitchAlerts\\": "src/"
         }
     },    
+    "keywords": [
+        "twitch", "alerts" , "twitch alerts", "twitch sdk"
+    ],
     "require": {
         "guzzlehttp/guzzle": "^6.1"
     },
