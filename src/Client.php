@@ -2,6 +2,8 @@
 
 namespace TwitchAlerts;
 
+use GuzzleHttp\Exception\BadResponseException;
+use TwitchAlerts\Exception\ApiException;
 use TwitchAlerts\Exception\InvalidScopeException;
 use GuzzleHttp\Client as HttpClient;
 
@@ -62,6 +64,11 @@ class Client
     protected $redirectUrl;
 
     /**
+     * @var HttpClient
+     */
+    protected $httpClient;
+
+    /**
      * Client constructor.
      *
      * @param string $clientId
@@ -104,6 +111,7 @@ class Client
      * @param string $code
      *
      * @return array
+     * @throws ApiException
      */
     public function getAccessToken($code)
     {
@@ -119,8 +127,8 @@ class Client
             ]);
 
             return json_decode((string) $response->getBody(), true);
-        } catch (\Exception $e) {
-            // TODO : Throw exception
+        } catch (BadResponseException $e) {
+            throw ApiException::fromBadResponseException($e);
         }
     }
 
@@ -128,6 +136,7 @@ class Client
      * @param string $refreshToken
      *
      * @return array
+     * @throws ApiException
      */
     public function refreshAccessToken($refreshToken)
     {
@@ -143,8 +152,8 @@ class Client
             ]);
 
             return json_decode((string) $response->getBody(), true);
-        } catch (\Exception $e) {
-            // TODO : Throw exception
+        } catch (BadResponseException $e) {
+            throw ApiException::fromBadResponseException($e);
         }
     }
 
@@ -154,6 +163,7 @@ class Client
      * @param string $currency
      *
      * @return array
+     * @throws ApiException
      */
     public function getDonations($accessToken, $limit, $currency)
     {
@@ -167,8 +177,8 @@ class Client
             ]);
 
             return json_decode((string) $response->getBody(), true);
-        } catch (\Exception $e) {
-            // TODO : Throw exception
+        } catch (BadResponseException $e) {
+            throw ApiException::fromBadResponseException($e);
         }
     }
 
@@ -181,6 +191,7 @@ class Client
      * @param string $message
      *
      * @return array
+     * @throws ApiException
      */
     public function postDonation($accessToken, $name, $email, $amount, $currency, $message)
     {
@@ -197,8 +208,8 @@ class Client
             ]);
 
             return json_decode((string) $response->getBody(), true);
-        } catch (\Exception $e) {
-            // TODO : Throw exception
+        } catch (BadResponseException $e) {
+            throw ApiException::fromBadResponseException($e);
         }
     }
 
@@ -212,6 +223,7 @@ class Client
      * @param int    $duration
      *
      * @return array
+     * @throws ApiException
      */
     public function postAlert($accessToken, $type, $message, $imageUrl, $soundUrl, $textColor, $duration)
     {
@@ -229,8 +241,8 @@ class Client
             ]);
 
             return json_decode((string) $response->getBody(), true);
-        } catch (\Exception $e) {
-            // TODO : Throw exception
+        } catch (BadResponseException $e) {
+            throw ApiException::fromBadResponseException($e);
         }
     }
 }
