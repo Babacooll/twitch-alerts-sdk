@@ -1,5 +1,8 @@
 # Twitch Alerts SDK
 
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/Babacooll/twitch-alerts-sdk/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/Babacooll/twitch-alerts-sdk/?branch=master)
+[![Build Status](https://scrutinizer-ci.com/g/Babacooll/twitch-alerts-sdk/badges/build.png?b=master)](https://scrutinizer-ci.com/g/Babacooll/twitch-alerts-sdk/build-status/master)
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/7671c871-a870-4134-8f7f-14435c1fec15/mini.png)](https://insight.sensiolabs.com/projects/7671c871-a870-4134-8f7f-14435c1fec15)
 
 ## Introduction
 
