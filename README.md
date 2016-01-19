@@ -1,4 +1,4 @@
-# Twitch Alerts API Wrapper
+# Twitch Alerts SDK
 
 
 ## Introduction
